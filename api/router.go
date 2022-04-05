@@ -2,8 +2,11 @@ package api
 
 import (
 	v1 "github.com/perfectogo/api-gateway/api/handler/v1"
+	swaggerFiles "github.com/swaggo/files"
+	ginSwagger "github.com/swaggo/gin-swagger"
 
 	"github.com/gin-gonic/gin"
+	_ "github.com/perfectogo/api-gateway/api/docs" // swag
 	"github.com/perfectogo/api-gateway/config"
 	"github.com/perfectogo/api-gateway/pkg/logger"
 	"github.com/perfectogo/api-gateway/service"
@@ -35,14 +38,7 @@ func New(option Option) *gin.Engine {
 	api.PUT("/authors/:id", handlerV1.UpdateAuthor)
 	api.DELETE("/authors/:id", handlerV1.DeleteAuthor)
 
-	return router
-}
-
-/*
-
 	url := ginSwagger.URL("swagger/doc.json") // The url pointing to API definition
 	router.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler, url))
-
 	return router
 }
-*/
