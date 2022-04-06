@@ -17,6 +17,12 @@ book-shop api-gateway for template
     import "github.com/swaggo/files" // swagger embed files
 ```
 
-3. 
-
-go run ../cmd/main.go 
+3. write code 
+ex: 
+```
+    // @Router /v1/authors [post]
+```
+4. generate:
+```
+     swag init -g api/router.go -o api/docs
+```

@@ -13,15 +13,15 @@ import (
 	"google.golang.org/protobuf/encoding/protojson"
 )
 
-//  CreateAuthor ...
+// CreateAuthor ...
+// @Router /v1/authors [post]
 // @Summary CreateAuthor
-// @Router /v1/authors/ [post]
 // @Description This API for creating a new author
 // @Tags author
 // @Accept  json
 // @Produce  json
 // @Param Author request body models.Author true "authorCreateRequest"
-// @Success 200 {object} models.AuthorResp
+// @Success 200 {object} models.Author
 // @Failure 400 {object} models.StandardErrorModel
 // @Failure 500 {object} models.StandardErrorModel
 
